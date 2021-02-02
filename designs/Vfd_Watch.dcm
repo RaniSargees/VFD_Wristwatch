@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP MIC2288
+D 1.2 Mhz PWM Boost Regulator with Internal Schotty Diode, MLF-8
+K boost switching voltage converter regulator
+$ENDCMP
+#
+#End Doc Library

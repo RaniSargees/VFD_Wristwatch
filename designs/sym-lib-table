@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name Vfd_Watch)(type Legacy)(uri ${KIPRJMOD}/Vfd_Watch.lib)(options "")(descr ""))
+  (lib (name VFDwatch-rescue)(type Legacy)(uri ${KIPRJMOD}/VFDwatch-rescue.lib)(options "")(descr ""))
+)

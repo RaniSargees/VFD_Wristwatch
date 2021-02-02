@@ -1,0 +1,4 @@
+(fp_lib_table
+  (lib (name ivl2)(type KiCad)(uri ${KIPRJMOD}/ivl2.pretty)(options "")(descr ""))
+  (lib (name vfd_watch)(type KiCad)(uri ${KIPRJMOD}/vfd_watch.pretty)(options "")(descr ""))
+)
