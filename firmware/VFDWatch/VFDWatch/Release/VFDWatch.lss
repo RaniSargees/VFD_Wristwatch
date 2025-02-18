@@ -1,0 +1,562 @@
+
+VFDWatch.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000074  00000000  00000000  000000b4  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000000  00800060  00000074  0000012a  2**0
+                  ALLOC
+  2 .comment      0000002f  00000000  00000000  0000044c  2**0
+                  CONTENTS, READONLY
+  3 .debug_info   00000420  00000000  00000000  0000047b  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_abbrev 000003e8  00000000  00000000  0000089b  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_line   000000f5  00000000  00000000  00000c83  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_str    00000169  00000000  00000000  00000d78  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .text         00000002  00000074  00000074  00000128  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  8 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000ee4  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .text.i2c_start 00000022  00000076  00000076  0000012a  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 10 .text.i2c_stop 00000022  00000098  00000098  0000014c  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 11 .text.i2c_tx  00000038  000000ba  000000ba  0000016e  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 12 .text.i2c_rx  00000040  000000f2  000000f2  000001a6  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 13 .text.i2c_start_write 0000001a  00000132  00000132  000001e6  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 14 .text.i2c_read 00000016  0000014c  0000014c  00000200  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 15 .text.fetchTime 00000018  00000162  00000162  00000216  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 16 .text.__vector_2 0000007e  0000017a  0000017a  0000022e  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 17 .text.ioEx    0000001a  000001f8  000001f8  000002ac  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 18 .text.showDigit 000000a6  00000212  00000212  000002c6  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 19 .text.wake    00000006  000002b8  000002b8  0000036c  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 20 .text.sleep   00000026  000002be  000002be  00000372  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 21 .text.startup.main 00000096  000002e4  000002e4  00000398  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 22 .bss.prevPins 00000001  00800060  00800060  0000044c  2**0
+                  ALLOC
+ 23 .bss.currPins 00000001  00800061  00800061  0000044c  2**0
+                  ALLOC
+ 24 .bss.pulseCounter 00000001  00800062  00800062  0000044c  2**0
+                  ALLOC
+ 25 .bss.minute   00000001  00800063  00800063  0000044c  2**0
+                  ALLOC
+ 26 .bss.hour     00000001  00800064  00800064  0000044c  2**0
+                  ALLOC
+ 27 .progmemx.data.grids 0000000a  0000037a  0000037a  0000042e  2**0
+                  CONTENTS, ALLOC, LOAD, READONLY, PROGMEMX
+ 28 .progmemx.data.digits 00000014  00000384  00000384  00000438  2**0
+                  CONTENTS, ALLOC, LOAD, READONLY, PROGMEMX
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	11 c0       	rjmp	.+34     	; 0x24 <__ctors_end>
+   2:	38 c0       	rjmp	.+112    	; 0x74 <_etext>
+   4:	ba c0       	rjmp	.+372    	; 0x17a <__vector_2>
+   6:	36 c0       	rjmp	.+108    	; 0x74 <_etext>
+   8:	35 c0       	rjmp	.+106    	; 0x74 <_etext>
+   a:	34 c0       	rjmp	.+104    	; 0x74 <_etext>
+   c:	33 c0       	rjmp	.+102    	; 0x74 <_etext>
+   e:	32 c0       	rjmp	.+100    	; 0x74 <_etext>
+  10:	31 c0       	rjmp	.+98     	; 0x74 <_etext>
+  12:	30 c0       	rjmp	.+96     	; 0x74 <_etext>
+  14:	2f c0       	rjmp	.+94     	; 0x74 <_etext>
+  16:	2e c0       	rjmp	.+92     	; 0x74 <_etext>
+  18:	2d c0       	rjmp	.+90     	; 0x74 <_etext>
+  1a:	2c c0       	rjmp	.+88     	; 0x74 <_etext>
+  1c:	2b c0       	rjmp	.+86     	; 0x74 <_etext>
+
+0000001e <.dinit>:
+  1e:	00 60       	ori	r16, 0x00	; 0
+  20:	00 65       	ori	r16, 0x50	; 80
+  22:	80 00       	.word	0x0080	; ????
+
+00000024 <__ctors_end>:
+  24:	11 24       	eor	r1, r1
+  26:	1f be       	out	0x3f, r1	; 63
+  28:	cf e5       	ldi	r28, 0x5F	; 95
+  2a:	d2 e0       	ldi	r29, 0x02	; 2
+  2c:	de bf       	out	0x3e, r29	; 62
+  2e:	cd bf       	out	0x3d, r28	; 61
+
+00000030 <__do_copy_data>:
+  30:	ee e1       	ldi	r30, 0x1E	; 30
+  32:	f0 e0       	ldi	r31, 0x00	; 0
+  34:	40 e0       	ldi	r20, 0x00	; 0
+  36:	17 c0       	rjmp	.+46     	; 0x66 <__do_clear_bss+0x8>
+  38:	b5 91       	lpm	r27, Z+
+  3a:	a5 91       	lpm	r26, Z+
+  3c:	35 91       	lpm	r19, Z+
+  3e:	25 91       	lpm	r18, Z+
+  40:	05 91       	lpm	r16, Z+
+  42:	07 fd       	sbrc	r16, 7
+  44:	0c c0       	rjmp	.+24     	; 0x5e <__do_clear_bss>
+  46:	95 91       	lpm	r25, Z+
+  48:	85 91       	lpm	r24, Z+
+  4a:	ef 01       	movw	r28, r30
+  4c:	f9 2f       	mov	r31, r25
+  4e:	e8 2f       	mov	r30, r24
+  50:	05 90       	lpm	r0, Z+
+  52:	0d 92       	st	X+, r0
+  54:	a2 17       	cp	r26, r18
+  56:	b3 07       	cpc	r27, r19
+  58:	d9 f7       	brne	.-10     	; 0x50 <__SREG__+0x11>
+  5a:	fe 01       	movw	r30, r28
+  5c:	04 c0       	rjmp	.+8      	; 0x66 <__do_clear_bss+0x8>
+
+0000005e <__do_clear_bss>:
+  5e:	1d 92       	st	X+, r1
+  60:	a2 17       	cp	r26, r18
+  62:	b3 07       	cpc	r27, r19
+  64:	e1 f7       	brne	.-8      	; 0x5e <__do_clear_bss>
+  66:	e3 32       	cpi	r30, 0x23	; 35
+  68:	f4 07       	cpc	r31, r20
+  6a:	31 f7       	brne	.-52     	; 0x38 <__do_copy_data+0x8>
+  6c:	3b d1       	rcall	.+630    	; 0x2e4 <main>
+  6e:	00 c0       	rjmp	.+0      	; 0x70 <_exit>
+
+00000070 <_exit>:
+  70:	f8 94       	cli
+
+00000072 <__stop_program>:
+  72:	ff cf       	rjmp	.-2      	; 0x72 <__stop_program>
+
+Disassembly of section .text:
+
+00000074 <__bad_interrupt>:
+  74:	c5 cf       	rjmp	.-118    	; 0x0 <__vectors>
+
+Disassembly of section .text.i2c_start:
+
+00000076 <i2c_start>:
+  76:	b8 98       	cbi	0x17, 0	; 23
+  78:	82 e0       	ldi	r24, 0x02	; 2
+  7a:	98 2f       	mov	r25, r24
+  7c:	9a 95       	dec	r25
+  7e:	f1 f7       	brne	.-4      	; 0x7c <i2c_start+0x6>
+  80:	ba 98       	cbi	0x17, 2	; 23
+  82:	98 2f       	mov	r25, r24
+  84:	9a 95       	dec	r25
+  86:	f1 f7       	brne	.-4      	; 0x84 <i2c_start+0xe>
+  88:	b8 9a       	sbi	0x17, 0	; 23
+  8a:	98 2f       	mov	r25, r24
+  8c:	9a 95       	dec	r25
+  8e:	f1 f7       	brne	.-4      	; 0x8c <i2c_start+0x16>
+  90:	ba 9a       	sbi	0x17, 2	; 23
+  92:	8a 95       	dec	r24
+  94:	f1 f7       	brne	.-4      	; 0x92 <i2c_start+0x1c>
+  96:	08 95       	ret
+
+Disassembly of section .text.i2c_stop:
+
+00000098 <i2c_stop>:
+  98:	ba 9a       	sbi	0x17, 2	; 23
+  9a:	82 e0       	ldi	r24, 0x02	; 2
+  9c:	98 2f       	mov	r25, r24
+  9e:	9a 95       	dec	r25
+  a0:	f1 f7       	brne	.-4      	; 0x9e <i2c_stop+0x6>
+  a2:	b8 9a       	sbi	0x17, 0	; 23
+  a4:	98 2f       	mov	r25, r24
+  a6:	9a 95       	dec	r25
+  a8:	f1 f7       	brne	.-4      	; 0xa6 <i2c_stop+0xe>
+  aa:	ba 98       	cbi	0x17, 2	; 23
+  ac:	98 2f       	mov	r25, r24
+  ae:	9a 95       	dec	r25
+  b0:	f1 f7       	brne	.-4      	; 0xae <i2c_stop+0x16>
+  b2:	b8 98       	cbi	0x17, 0	; 23
+  b4:	8a 95       	dec	r24
+  b6:	f1 f7       	brne	.-4      	; 0xb4 <i2c_stop+0x1c>
+  b8:	08 95       	ret
+
+Disassembly of section .text.i2c_tx:
+
+000000ba <i2c_tx>:
+  ba:	98 e0       	ldi	r25, 0x08	; 8
+  bc:	32 e0       	ldi	r19, 0x02	; 2
+  be:	87 ff       	sbrs	r24, 7
+  c0:	02 c0       	rjmp	.+4      	; 0xc6 <i2c_tx+0xc>
+  c2:	b8 98       	cbi	0x17, 0	; 23
+  c4:	01 c0       	rjmp	.+2      	; 0xc8 <i2c_tx+0xe>
+  c6:	b8 9a       	sbi	0x17, 0	; 23
+  c8:	88 0f       	add	r24, r24
+  ca:	ba 98       	cbi	0x17, 2	; 23
+  cc:	23 2f       	mov	r18, r19
+  ce:	2a 95       	dec	r18
+  d0:	f1 f7       	brne	.-4      	; 0xce <i2c_tx+0x14>
+  d2:	ba 9a       	sbi	0x17, 2	; 23
+  d4:	23 2f       	mov	r18, r19
+  d6:	2a 95       	dec	r18
+  d8:	f1 f7       	brne	.-4      	; 0xd6 <i2c_tx+0x1c>
+  da:	91 50       	subi	r25, 0x01	; 1
+  dc:	81 f7       	brne	.-32     	; 0xbe <i2c_tx+0x4>
+  de:	b8 98       	cbi	0x17, 0	; 23
+  e0:	ba 98       	cbi	0x17, 2	; 23
+  e2:	82 e0       	ldi	r24, 0x02	; 2
+  e4:	8a 95       	dec	r24
+  e6:	f1 f7       	brne	.-4      	; 0xe4 <i2c_tx+0x2a>
+  e8:	86 b3       	in	r24, 0x16	; 22
+  ea:	ba 9a       	sbi	0x17, 2	; 23
+  ec:	80 95       	com	r24
+  ee:	81 70       	andi	r24, 0x01	; 1
+  f0:	08 95       	ret
+
+Disassembly of section .text.i2c_rx:
+
+000000f2 <i2c_rx>:
+  f2:	48 2f       	mov	r20, r24
+  f4:	b8 98       	cbi	0x17, 0	; 23
+  f6:	98 e0       	ldi	r25, 0x08	; 8
+  f8:	80 e0       	ldi	r24, 0x00	; 0
+  fa:	32 e0       	ldi	r19, 0x02	; 2
+  fc:	88 0f       	add	r24, r24
+  fe:	ba 98       	cbi	0x17, 2	; 23
+ 100:	b2 9b       	sbis	0x16, 2	; 22
+ 102:	fd cf       	rjmp	.-6      	; 0xfe <i2c_rx+0xc>
+ 104:	23 2f       	mov	r18, r19
+ 106:	2a 95       	dec	r18
+ 108:	f1 f7       	brne	.-4      	; 0x106 <i2c_rx+0x14>
+ 10a:	b0 99       	sbic	0x16, 0	; 22
+ 10c:	81 60       	ori	r24, 0x01	; 1
+ 10e:	23 2f       	mov	r18, r19
+ 110:	2a 95       	dec	r18
+ 112:	f1 f7       	brne	.-4      	; 0x110 <i2c_rx+0x1e>
+ 114:	ba 9a       	sbi	0x17, 2	; 23
+ 116:	91 50       	subi	r25, 0x01	; 1
+ 118:	89 f7       	brne	.-30     	; 0xfc <i2c_rx+0xa>
+ 11a:	44 23       	and	r20, r20
+ 11c:	11 f0       	breq	.+4      	; 0x122 <i2c_rx+0x30>
+ 11e:	b8 9a       	sbi	0x17, 0	; 23
+ 120:	01 c0       	rjmp	.+2      	; 0x124 <i2c_rx+0x32>
+ 122:	b8 98       	cbi	0x17, 0	; 23
+ 124:	ba 98       	cbi	0x17, 2	; 23
+ 126:	92 e0       	ldi	r25, 0x02	; 2
+ 128:	9a 95       	dec	r25
+ 12a:	f1 f7       	brne	.-4      	; 0x128 <i2c_rx+0x36>
+ 12c:	ba 9a       	sbi	0x17, 2	; 23
+ 12e:	b8 98       	cbi	0x17, 0	; 23
+ 130:	08 95       	ret
+
+Disassembly of section .text.i2c_start_write:
+
+00000132 <i2c_start_write>:
+ 132:	cf 93       	push	r28
+ 134:	df 93       	push	r29
+ 136:	d8 2f       	mov	r29, r24
+ 138:	c6 2f       	mov	r28, r22
+ 13a:	f8 94       	cli
+ 13c:	9c df       	rcall	.-200    	; 0x76 <i2c_start>
+ 13e:	8d 2f       	mov	r24, r29
+ 140:	88 0f       	add	r24, r24
+ 142:	bb df       	rcall	.-138    	; 0xba <i2c_tx>
+ 144:	8c 2f       	mov	r24, r28
+ 146:	df 91       	pop	r29
+ 148:	cf 91       	pop	r28
+ 14a:	b7 cf       	rjmp	.-146    	; 0xba <i2c_tx>
+
+Disassembly of section .text.i2c_read:
+
+0000014c <i2c_read>:
+ 14c:	cf 93       	push	r28
+ 14e:	c8 2f       	mov	r28, r24
+ 150:	f0 df       	rcall	.-32     	; 0x132 <i2c_start_write>
+ 152:	91 df       	rcall	.-222    	; 0x76 <i2c_start>
+ 154:	8c 2f       	mov	r24, r28
+ 156:	88 0f       	add	r24, r24
+ 158:	81 60       	ori	r24, 0x01	; 1
+ 15a:	af df       	rcall	.-162    	; 0xba <i2c_tx>
+ 15c:	81 e0       	ldi	r24, 0x01	; 1
+ 15e:	cf 91       	pop	r28
+ 160:	c8 cf       	rjmp	.-112    	; 0xf2 <i2c_rx>
+
+Disassembly of section .text.fetchTime:
+
+00000162 <fetchTime>:
+ 162:	61 e0       	ldi	r22, 0x01	; 1
+ 164:	8f e6       	ldi	r24, 0x6F	; 111
+ 166:	f2 df       	rcall	.-28     	; 0x14c <i2c_read>
+ 168:	80 93 63 00 	sts	0x0063, r24	; 0x800063 <minute>
+ 16c:	95 df       	rcall	.-214    	; 0x98 <i2c_stop>
+ 16e:	62 e0       	ldi	r22, 0x02	; 2
+ 170:	8f e6       	ldi	r24, 0x6F	; 111
+ 172:	ec df       	rcall	.-40     	; 0x14c <i2c_read>
+ 174:	80 93 64 00 	sts	0x0064, r24	; 0x800064 <hour>
+ 178:	08 95       	ret
+
+Disassembly of section .text.__vector_2:
+
+0000017a <__vector_2>:
+ 17a:	1f 92       	push	r1
+ 17c:	0f 92       	push	r0
+ 17e:	0f b6       	in	r0, 0x3f	; 63
+ 180:	0f 92       	push	r0
+ 182:	11 24       	eor	r1, r1
+ 184:	2f 93       	push	r18
+ 186:	3f 93       	push	r19
+ 188:	4f 93       	push	r20
+ 18a:	5f 93       	push	r21
+ 18c:	6f 93       	push	r22
+ 18e:	7f 93       	push	r23
+ 190:	8f 93       	push	r24
+ 192:	9f 93       	push	r25
+ 194:	af 93       	push	r26
+ 196:	bf 93       	push	r27
+ 198:	ef 93       	push	r30
+ 19a:	ff 93       	push	r31
+ 19c:	80 91 61 00 	lds	r24, 0x0061	; 0x800061 <currPins>
+ 1a0:	80 93 60 00 	sts	0x0060, r24	; 0x800060 <_edata>
+ 1a4:	86 b3       	in	r24, 0x16	; 22
+ 1a6:	80 93 61 00 	sts	0x0061, r24	; 0x800061 <currPins>
+ 1aa:	20 91 60 00 	lds	r18, 0x0060	; 0x800060 <_edata>
+ 1ae:	80 91 61 00 	lds	r24, 0x0061	; 0x800061 <currPins>
+ 1b2:	95 b3       	in	r25, 0x15	; 21
+ 1b4:	82 27       	eor	r24, r18
+ 1b6:	89 23       	and	r24, r25
+ 1b8:	88 30       	cpi	r24, 0x08	; 8
+ 1ba:	59 f0       	breq	.+22     	; 0x1d2 <__vector_2+0x58>
+ 1bc:	80 31       	cpi	r24, 0x10	; 16
+ 1be:	49 f0       	breq	.+18     	; 0x1d2 <__vector_2+0x58>
+ 1c0:	82 30       	cpi	r24, 0x02	; 2
+ 1c2:	49 f4       	brne	.+18     	; 0x1d6 <__vector_2+0x5c>
+ 1c4:	ce df       	rcall	.-100    	; 0x162 <fetchTime>
+ 1c6:	80 91 62 00 	lds	r24, 0x0062	; 0x800062 <pulseCounter>
+ 1ca:	8f 5f       	subi	r24, 0xFF	; 255
+ 1cc:	80 93 62 00 	sts	0x0062, r24	; 0x800062 <pulseCounter>
+ 1d0:	02 c0       	rjmp	.+4      	; 0x1d6 <__vector_2+0x5c>
+ 1d2:	10 92 62 00 	sts	0x0062, r1	; 0x800062 <pulseCounter>
+ 1d6:	ff 91       	pop	r31
+ 1d8:	ef 91       	pop	r30
+ 1da:	bf 91       	pop	r27
+ 1dc:	af 91       	pop	r26
+ 1de:	9f 91       	pop	r25
+ 1e0:	8f 91       	pop	r24
+ 1e2:	7f 91       	pop	r23
+ 1e4:	6f 91       	pop	r22
+ 1e6:	5f 91       	pop	r21
+ 1e8:	4f 91       	pop	r20
+ 1ea:	3f 91       	pop	r19
+ 1ec:	2f 91       	pop	r18
+ 1ee:	0f 90       	pop	r0
+ 1f0:	0f be       	out	0x3f, r0	; 63
+ 1f2:	0f 90       	pop	r0
+ 1f4:	1f 90       	pop	r1
+ 1f6:	18 95       	reti
+
+Disassembly of section .text.ioEx:
+
+000001f8 <ioEx>:
+ 1f8:	cf 93       	push	r28
+ 1fa:	df 93       	push	r29
+ 1fc:	d6 2f       	mov	r29, r22
+ 1fe:	c4 2f       	mov	r28, r20
+ 200:	68 2f       	mov	r22, r24
+ 202:	80 e2       	ldi	r24, 0x20	; 32
+ 204:	96 df       	rcall	.-212    	; 0x132 <i2c_start_write>
+ 206:	8d 2f       	mov	r24, r29
+ 208:	58 df       	rcall	.-336    	; 0xba <i2c_tx>
+ 20a:	8c 2f       	mov	r24, r28
+ 20c:	df 91       	pop	r29
+ 20e:	cf 91       	pop	r28
+ 210:	54 cf       	rjmp	.-344    	; 0xba <i2c_tx>
+
+Disassembly of section .text.showDigit:
+
+00000212 <showDigit>:
+ 212:	0f 93       	push	r16
+ 214:	1f 93       	push	r17
+ 216:	cf 93       	push	r28
+ 218:	df 93       	push	r29
+ 21a:	c8 2f       	mov	r28, r24
+ 21c:	06 2f       	mov	r16, r22
+ 21e:	62 e0       	ldi	r22, 0x02	; 2
+ 220:	80 e2       	ldi	r24, 0x20	; 32
+ 222:	87 df       	rcall	.-242    	; 0x132 <i2c_start_write>
+ 224:	10 e0       	ldi	r17, 0x00	; 0
+ 226:	d0 e0       	ldi	r29, 0x00	; 0
+ 228:	00 0f       	add	r16, r16
+ 22a:	11 1f       	adc	r17, r17
+ 22c:	c8 01       	movw	r24, r16
+ 22e:	01 2e       	mov	r0, r17
+ 230:	00 0c       	add	r0, r0
+ 232:	aa 0b       	sbc	r26, r26
+ 234:	8c 57       	subi	r24, 0x7C	; 124
+ 236:	9c 4f       	sbci	r25, 0xFC	; 252
+ 238:	af 4f       	sbci	r26, 0xFF	; 255
+ 23a:	cc 0f       	add	r28, r28
+ 23c:	dd 1f       	adc	r29, r29
+ 23e:	9e 01       	movw	r18, r28
+ 240:	0d 2e       	mov	r0, r29
+ 242:	00 0c       	add	r0, r0
+ 244:	44 0b       	sbc	r20, r20
+ 246:	26 58       	subi	r18, 0x86	; 134
+ 248:	3c 4f       	sbci	r19, 0xFC	; 252
+ 24a:	4f 4f       	sbci	r20, 0xFF	; 255
+ 24c:	fc 01       	movw	r30, r24
+ 24e:	94 91       	lpm	r25, Z
+ 250:	a7 fd       	sbrc	r26, 7
+ 252:	90 81       	ld	r25, Z
+ 254:	f9 01       	movw	r30, r18
+ 256:	84 91       	lpm	r24, Z
+ 258:	47 fd       	sbrc	r20, 7
+ 25a:	80 81       	ld	r24, Z
+ 25c:	89 2b       	or	r24, r25
+ 25e:	2d df       	rcall	.-422    	; 0xba <i2c_tx>
+ 260:	c8 01       	movw	r24, r16
+ 262:	01 96       	adiw	r24, 0x01	; 1
+ 264:	09 2e       	mov	r0, r25
+ 266:	00 0c       	add	r0, r0
+ 268:	aa 0b       	sbc	r26, r26
+ 26a:	8c 57       	subi	r24, 0x7C	; 124
+ 26c:	9c 4f       	sbci	r25, 0xFC	; 252
+ 26e:	af 4f       	sbci	r26, 0xFF	; 255
+ 270:	9e 01       	movw	r18, r28
+ 272:	2f 5f       	subi	r18, 0xFF	; 255
+ 274:	3f 4f       	sbci	r19, 0xFF	; 255
+ 276:	03 2e       	mov	r0, r19
+ 278:	00 0c       	add	r0, r0
+ 27a:	44 0b       	sbc	r20, r20
+ 27c:	26 58       	subi	r18, 0x86	; 134
+ 27e:	3c 4f       	sbci	r19, 0xFC	; 252
+ 280:	4f 4f       	sbci	r20, 0xFF	; 255
+ 282:	fc 01       	movw	r30, r24
+ 284:	94 91       	lpm	r25, Z
+ 286:	a7 fd       	sbrc	r26, 7
+ 288:	90 81       	ld	r25, Z
+ 28a:	f9 01       	movw	r30, r18
+ 28c:	84 91       	lpm	r24, Z
+ 28e:	47 fd       	sbrc	r20, 7
+ 290:	80 81       	ld	r24, Z
+ 292:	89 2b       	or	r24, r25
+ 294:	12 df       	rcall	.-476    	; 0xba <i2c_tx>
+ 296:	40 e0       	ldi	r20, 0x00	; 0
+ 298:	60 e0       	ldi	r22, 0x00	; 0
+ 29a:	86 e0       	ldi	r24, 0x06	; 6
+ 29c:	ad df       	rcall	.-166    	; 0x1f8 <ioEx>
+ 29e:	4f e3       	ldi	r20, 0x3F	; 63
+ 2a0:	6f ef       	ldi	r22, 0xFF	; 255
+ 2a2:	86 e0       	ldi	r24, 0x06	; 6
+ 2a4:	a9 df       	rcall	.-174    	; 0x1f8 <ioEx>
+ 2a6:	80 e0       	ldi	r24, 0x00	; 0
+ 2a8:	98 e0       	ldi	r25, 0x08	; 8
+ 2aa:	01 97       	sbiw	r24, 0x01	; 1
+ 2ac:	f1 f7       	brne	.-4      	; 0x2aa <__stack+0x4b>
+ 2ae:	df 91       	pop	r29
+ 2b0:	cf 91       	pop	r28
+ 2b2:	1f 91       	pop	r17
+ 2b4:	0f 91       	pop	r16
+ 2b6:	08 95       	ret
+
+Disassembly of section .text.wake:
+
+000002b8 <wake>:
+ 2b8:	8a e1       	ldi	r24, 0x1A	; 26
+ 2ba:	85 bb       	out	0x15, r24	; 21
+ 2bc:	52 cf       	rjmp	.-348    	; 0x162 <fetchTime>
+
+Disassembly of section .text.sleep:
+
+000002be <sleep>:
+ 2be:	88 b3       	in	r24, 0x18	; 24
+ 2c0:	85 bb       	out	0x15, r24	; 21
+ 2c2:	4f ef       	ldi	r20, 0xFF	; 255
+ 2c4:	6f ef       	ldi	r22, 0xFF	; 255
+ 2c6:	86 e0       	ldi	r24, 0x06	; 6
+ 2c8:	97 df       	rcall	.-210    	; 0x1f8 <ioEx>
+ 2ca:	85 b7       	in	r24, 0x35	; 53
+ 2cc:	87 7e       	andi	r24, 0xE7	; 231
+ 2ce:	80 61       	ori	r24, 0x10	; 16
+ 2d0:	85 bf       	out	0x35, r24	; 53
+ 2d2:	85 b7       	in	r24, 0x35	; 53
+ 2d4:	80 62       	ori	r24, 0x20	; 32
+ 2d6:	85 bf       	out	0x35, r24	; 53
+ 2d8:	78 94       	sei
+ 2da:	88 95       	sleep
+ 2dc:	85 b7       	in	r24, 0x35	; 53
+ 2de:	8f 7d       	andi	r24, 0xDF	; 223
+ 2e0:	85 bf       	out	0x35, r24	; 53
+ 2e2:	ea cf       	rjmp	.-44     	; 0x2b8 <wake>
+
+Disassembly of section .text.startup.main:
+
+000002e4 <main>:
+ 2e4:	83 e0       	ldi	r24, 0x03	; 3
+ 2e6:	80 bd       	out	0x20, r24	; 32
+ 2e8:	88 e1       	ldi	r24, 0x18	; 24
+ 2ea:	88 bb       	out	0x18, r24	; 24
+ 2ec:	86 b3       	in	r24, 0x16	; 22
+ 2ee:	80 93 61 00 	sts	0x0061, r24	; 0x800061 <currPins>
+ 2f2:	67 e0       	ldi	r22, 0x07	; 7
+ 2f4:	8f e6       	ldi	r24, 0x6F	; 111
+ 2f6:	1d df       	rcall	.-454    	; 0x132 <i2c_start_write>
+ 2f8:	80 e4       	ldi	r24, 0x40	; 64
+ 2fa:	df de       	rcall	.-578    	; 0xba <i2c_tx>
+ 2fc:	60 e0       	ldi	r22, 0x00	; 0
+ 2fe:	8f e6       	ldi	r24, 0x6F	; 111
+ 300:	25 df       	rcall	.-438    	; 0x14c <i2c_read>
+ 302:	c8 2f       	mov	r28, r24
+ 304:	60 e0       	ldi	r22, 0x00	; 0
+ 306:	8f e6       	ldi	r24, 0x6F	; 111
+ 308:	14 df       	rcall	.-472    	; 0x132 <i2c_start_write>
+ 30a:	8c 2f       	mov	r24, r28
+ 30c:	80 68       	ori	r24, 0x80	; 128
+ 30e:	d5 de       	rcall	.-598    	; 0xba <i2c_tx>
+ 310:	80 e2       	ldi	r24, 0x20	; 32
+ 312:	8b bf       	out	0x3b, r24	; 59
+ 314:	d1 df       	rcall	.-94     	; 0x2b8 <wake>
+ 316:	78 94       	sei
+ 318:	80 91 62 00 	lds	r24, 0x0062	; 0x800062 <pulseCounter>
+ 31c:	8b 30       	cpi	r24, 0x0B	; 11
+ 31e:	58 f0       	brcs	.+22     	; 0x336 <main+0x52>
+ 320:	86 b3       	in	r24, 0x16	; 22
+ 322:	28 b3       	in	r18, 0x18	; 24
+ 324:	90 e0       	ldi	r25, 0x00	; 0
+ 326:	80 95       	com	r24
+ 328:	90 95       	com	r25
+ 32a:	30 e0       	ldi	r19, 0x00	; 0
+ 32c:	82 23       	and	r24, r18
+ 32e:	93 23       	and	r25, r19
+ 330:	89 2b       	or	r24, r25
+ 332:	09 f4       	brne	.+2      	; 0x336 <main+0x52>
+ 334:	c4 df       	rcall	.-120    	; 0x2be <sleep>
+ 336:	f8 94       	cli
+ 338:	60 91 62 00 	lds	r22, 0x0062	; 0x800062 <pulseCounter>
+ 33c:	61 70       	andi	r22, 0x01	; 1
+ 33e:	6f 5f       	subi	r22, 0xFF	; 255
+ 340:	82 e0       	ldi	r24, 0x02	; 2
+ 342:	67 df       	rcall	.-306    	; 0x212 <showDigit>
+ 344:	80 91 64 00 	lds	r24, 0x0064	; 0x800064 <hour>
+ 348:	80 73       	andi	r24, 0x30	; 48
+ 34a:	31 f0       	breq	.+12     	; 0x358 <main+0x74>
+ 34c:	60 91 64 00 	lds	r22, 0x0064	; 0x800064 <hour>
+ 350:	62 95       	swap	r22
+ 352:	63 70       	andi	r22, 0x03	; 3
+ 354:	80 e0       	ldi	r24, 0x00	; 0
+ 356:	5d df       	rcall	.-326    	; 0x212 <showDigit>
+ 358:	60 91 64 00 	lds	r22, 0x0064	; 0x800064 <hour>
+ 35c:	6f 70       	andi	r22, 0x0F	; 15
+ 35e:	81 e0       	ldi	r24, 0x01	; 1
+ 360:	58 df       	rcall	.-336    	; 0x212 <showDigit>
+ 362:	60 91 63 00 	lds	r22, 0x0063	; 0x800063 <minute>
+ 366:	62 95       	swap	r22
+ 368:	67 70       	andi	r22, 0x07	; 7
+ 36a:	83 e0       	ldi	r24, 0x03	; 3
+ 36c:	52 df       	rcall	.-348    	; 0x212 <showDigit>
+ 36e:	60 91 63 00 	lds	r22, 0x0063	; 0x800063 <minute>
+ 372:	6f 70       	andi	r22, 0x0F	; 15
+ 374:	84 e0       	ldi	r24, 0x04	; 4
+ 376:	4d df       	rcall	.-358    	; 0x212 <showDigit>
+ 378:	ce cf       	rjmp	.-100    	; 0x316 <main+0x32>
